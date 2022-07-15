@@ -5,5 +5,5 @@ export default styled.div`
   top: 0;
   bottom: 0;
   left: 0;
-  right: 200px;
+  right: 0;
 `

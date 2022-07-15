@@ -1,23 +1,48 @@
 import React from 'react'
-import Wrapper from './Wrapper'
-import SubTitle from './SubTitle'
-import Links from './Links'
-import Footer from './Footer'
+import 'antd/dist/antd.css'
+import { Tree } from 'antd'
 
-export default () => (
-  <Wrapper>
-    <h1>JSON Viewer</h1>
-    <SubTitle>Jolly good JSON viewer</SubTitle>
-    <Footer>
-      <Links>
-        <li>
-          <a href='//github.com/Secretmapper/jsonviewer'>Source code</a>
-        </li>
-        <li>
-          <a href='//github.com/Secretmapper/jsonviewer/issues'>Report issues</a>
-        </li>
-      </Links>
-      Made by <a href='http://twitter.com/Secretmapper'>@secretmapper</a>
-    </Footer>
-  </Wrapper>
-)
+function ListArchives({list, updateData, config}) {
+
+  const { DirectoryTree } = Tree
+
+  const children = list.map(function(arquive, index) {
+      return (
+      {
+        title: arquive,
+        key: index,
+        isLeaf: true,
+      })
+    }
+  )
+
+  const treeData = [
+    {
+      title: 'files',
+      key: '0-0',
+      children: children
+    }
+  ]
+
+  const onSelect = (keys, info) => {
+    console.log('Trigger Select', keys, info)
+    updateData(keys, config)
+  }
+
+  const onExpand = (keys, info) => {
+    console.log('Trigger Expand', keys, info)
+  }
+
+  return (
+    <DirectoryTree
+      multiple
+      defaultExpandAll
+      onSelect={onSelect}
+      onExpand={onExpand}
+      treeData={treeData}
+      style={{color: '#FFFF', backgroundColor: '#393838', padding:'20px'}}
+    />
+  )
+}
+
+export default ListArchives

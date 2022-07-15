@@ -3,8 +3,8 @@ body {
   padding: 0;
   font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
 
-  background: #292828;
-  color: #DCDCDC;
+  background: #292828 !important;
+  color: #DCDCDC !important;
 }
 
 html, body, #root {
@@ -13,8 +13,8 @@ html, body, #root {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: montserrat;
-  font-weight: normal;
+  font-family: montserrat !important;
+  font-weight: normal !important;
 }
 
 @keyframes moveUp {
@@ -28,24 +28,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-worker-toast {
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 0 12px #181717;
-  color: #797979;
-  padding: 17px;
+  background: white !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 12px #181717 !important;
+  color: #797979 !important;
+  padding: 17px !important;
 
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-  z-index: 10;
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  z-index: 10 !important;
 
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease !important;
 }
 
 .service-worker-toast.service-worker-toast--enter {
-  animation: moveUp 0.5s ease;
+  animation: moveUp 0.5s ease !important;
 }
 .service-worker-toast.service-worker-toast--exit {
-  animation: moveDown 0.5s ease;
-  animation-fill-mode: forwards;  
+  animation: moveDown 0.5s ease !important;
+  animation-fill-mode: forwards !important;
+}
+
+.ant-tree.ant-tree-directory .ant-tree-treenode:hover::before {
+  background: #292828 !important;
 }
