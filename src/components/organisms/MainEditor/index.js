@@ -47,9 +47,7 @@ export default class MainEditor extends Component {
       const hide = message.loading('in progress..', 0)
 
       axios.patch(config.url+'/'+config.route+'/'+archive_id,
-        {
-          'data': JSON.parse(code)
-        }
+        JSON.parse(code)
       ).then(result => {
         //alert("Sucesso!")
         setTimeout(hide, 50)
