@@ -1,4 +1,4 @@
 {
-    "url": "",
-    "route": "config"
+  "url": "/api",
+  "route": "config"
 }
